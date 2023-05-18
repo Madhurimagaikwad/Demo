@@ -24,6 +24,16 @@ public class User {
 	private String gender;
 	private Date birthday;
 	private String userType;
+	 @OneToMany(mappedBy = "userId")
+		private List<Orders> orderlist;
+	
+	 public List<Orders> getOrderlist() {
+		return orderlist;
+	}
+	 public void setOrderlist(List<Orders> orderlist) {
+		this.orderlist = orderlist;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
