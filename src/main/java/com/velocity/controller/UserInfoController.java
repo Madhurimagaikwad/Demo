@@ -20,7 +20,7 @@ public class UserInfoController {
 	private UserInfoService userInfoService;
 
 	/*
-	 * Madhurima Gaikwad
+	 *@Author- Madhurima Gaikwad
 	 */
 	@PostMapping("/saveUserInfo")
 	public ResponseEntity<UserInfo> saveUserInfo(@RequestBody UserInfo userInfo) {
