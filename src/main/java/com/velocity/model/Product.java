@@ -14,6 +14,7 @@ public class Product {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private int id;
 	private String Productname;
 	private String Manufactureddate;
@@ -21,8 +22,7 @@ public class Product {
 	private int quantity;
 	private double price;
 	private int Productcode;
-	
-	
+
 	public int getId() {
 		return id;
 	}

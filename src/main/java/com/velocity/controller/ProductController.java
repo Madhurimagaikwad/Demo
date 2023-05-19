@@ -1,5 +1,10 @@
 package com.velocity.controller;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import java.util.List;
 
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
@@ -27,6 +32,15 @@ public class ProductController {
 		logger.info("In RestController >>getProductList");
 		
 		return ResponseEntity.ok().body(plist) ;
+	}
+
+	@Autowired
+	private ProductService productService;
+
+	@PutMapping("/updateProduct")
+	public Product updateProduct(@RequestBody Product product) {
+		return productService.updateProduct(product);
+
 	}
 
 }
