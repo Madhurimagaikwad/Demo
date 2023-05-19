@@ -1,6 +1,8 @@
 package com.velocity.service.impl;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +31,17 @@ public class UserServiceImpl implements UserService {
 		
 		return userRepository.save(user2);
 	}
+	@Override
+	public List<User> getUser() {
+		List<User> list = (List<User>) userRepository.findAll();
+		return list;
+	}
+	@Override
+	public User saveUser(User user) {
+		
+		User users= userRepository.save(user);
+		return users;
+	}
+
 
 }

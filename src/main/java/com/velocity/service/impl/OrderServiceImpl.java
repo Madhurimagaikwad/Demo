@@ -1,5 +1,7 @@
 package com.velocity.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +31,17 @@ public class OrderServiceImpl implements OrderService {
 		
 	}
 
+	@Override
+	public List<Orders> getOrder() {
+		List<Orders> list = (List<Orders>) orderRepository.findAll();
+		return list;
+	}
+	
+	@Override
+	public Orders saveOrders(Orders orders) {
+		Orders orders2 = orderRepository.save(orders);
+		return orders2;
+	}
+	
 
 }
