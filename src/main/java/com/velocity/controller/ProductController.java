@@ -29,7 +29,7 @@ public class ProductController {
 	
 	@Autowired
 	private ProductService productService;
-	
+	/* Author Anushka */
 	@DeleteMapping("/cancleProductById/{id}")
 	public void cancleProductById(@PathVariable("id") int id)
 	{
