@@ -24,6 +24,61 @@ public class User {
 	private String gender;
 	private Date birthday;
 	private String userType;
+
+	@OneToMany(mappedBy = "userId")
+	private List<Orders> orderlist;
+
+ public List<Orders> getOrderlist() {
+	return orderlist;
+}
+ public void setOrderlist(List<Orders> orderlist) {
+	this.orderlist = orderlist;
+}
+
+public Integer getId() {
+	return id;
+}
+public void setId(Integer id) {
+	this.id = id;
+}
+public String getUsername() {
+	return username;
+}
+public void setUsername(String username) {
+	this.username = username;
+}
+public String getRealName() {
+	return realName;
+}
+public void setRealName(String realName) {
+	this.realName = realName;
+}
+public String getPassword() {
+	return password;
+}
+public void setPassword(String password) {
+	this.password = password;
+}
+public String getGender() {
+	return gender;
+}
+public void setGender(String gender) {
+	this.gender = gender;
+}
+public Date getBirthday() {
+	return birthday;
+}
+public void setBirthday(Date birthday) {
+	this.birthday = birthday;
+}
+public String getUserType() {
+	return userType;
+}
+public void setUserType(String userType) {
+	this.userType = userType;
+}
+
+
 	public Integer getId() {
 		return id;
 	}
@@ -66,6 +121,7 @@ public class User {
 	public void setUserType(String userType) {
 		this.userType = userType;
 	}
+
 	
 	 
 
