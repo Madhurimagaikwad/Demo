@@ -1,5 +1,7 @@
 package com.velocity.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,11 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="produce")
+@Table(name="product")
 public class Product {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private int id;
 	private String Productname;
 	private String Manufactureddate;
@@ -19,6 +22,7 @@ public class Product {
 	private int quantity;
 	private double price;
 	private int Productcode;
+
 	public int getId() {
 		return id;
 	}
