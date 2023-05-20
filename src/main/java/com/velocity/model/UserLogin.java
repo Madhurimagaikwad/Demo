@@ -1,3 +1,4 @@
+
 package com.velocity.model;
 
 import java.util.List;
@@ -10,11 +11,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+package com.velocity.model;
+
+import javax.persistence.Entity;
+
 import javax.persistence.Table;
 
 @Entity
 @Table(name="userlogin")
 public class UserLogin {
+
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -90,4 +97,6 @@ public class UserLogin {
 
 
 	
+}
+
 }

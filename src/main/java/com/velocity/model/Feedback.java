@@ -1,3 +1,4 @@
+
 package com.velocity.model;
 
 import javax.persistence.Entity;
@@ -6,11 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+package com.velocity.model;
+
+import javax.persistence.Entity;
+
 import javax.persistence.Table;
 
 @Entity
 @Table(name="feedback")
 public class Feedback {
+
 
 	
 	@Id
@@ -72,5 +79,7 @@ public class Feedback {
 	public void setBikeName(String bikeName) {
 		this.bikeName = bikeName;
 	}
+
+}
 
 }
