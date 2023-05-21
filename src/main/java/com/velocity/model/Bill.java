@@ -73,14 +73,7 @@ public class Bill {
 		this.money = money;
 	}
 
-	public Integer getPid() {
-		return pid;
-	}
-
-	public void setPid(Integer pid) {
-		this.pid = pid;
-	}
-
+	
 	public Provider getProvider() {
 		return provider;
 	}
@@ -89,7 +82,12 @@ public class Bill {
 		this.provider = provider;
 	}
 	
-	
+	public Integer getPid() {
+		return pid;
+	}
+	public void setPid(Integer pid) {
+		this.pid = pid;
+	}
 	
 	
 

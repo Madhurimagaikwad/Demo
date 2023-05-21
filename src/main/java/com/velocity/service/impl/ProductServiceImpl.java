@@ -34,8 +34,7 @@ public class ProductServiceImpl implements ProductService {
 		productRepository.deleteById(id);
 
 
-	@Autowired
-	private ProductRepository productRepository;
+	}
 
 	@Override
 	public Product updateProduct(Product product) {
@@ -48,13 +47,13 @@ public class ProductServiceImpl implements ProductService {
 		pro.setPrice(product.getPrice());
 		pro.setProductcode(product.getProductcode());
 		pro.setQuantity(product.getQuantity());
+		pro.setCategory(product.getCategory());
 		return productRepository.save(pro);
-
+	}
 
 	private static final org.jboss.logging.Logger logger  =LoggerFactory.logger(ProductServiceImpl.class);
 
-	@Autowired
-	private ProductRepository productRepository;
+	
 	
 	@SuppressWarnings("unchecked")
 	@Override

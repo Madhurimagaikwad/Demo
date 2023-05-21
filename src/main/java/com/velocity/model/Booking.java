@@ -1,4 +1,4 @@
-/*package com.velocity.model;
+package com.velocity.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -7,4 +7,4 @@ import javax.persistence.Table;
 @Table(name="booking")
 public class Booking {
 
-}*/
+}

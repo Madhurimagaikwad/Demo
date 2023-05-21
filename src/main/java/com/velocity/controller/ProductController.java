@@ -1,6 +1,5 @@
 package com.velocity.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
@@ -24,37 +23,34 @@ import com.velocity.service.ProductService;
 @RestController
 public class ProductController {
 
-	
+	private static final org.jboss.logging.Logger logger = LoggerFactory.logger(ProductController.class);
+
 	// inject ProductService reference
-	
+
 	@Autowired
 	private ProductService productService;
+
 	/* Author Anushka */
 	@DeleteMapping("/cancleProductById/{id}")
-	public void cancleProductById(@PathVariable("id") int id)
-	{
+	public void cancleProductById(@PathVariable("id") int id) {
 		productService.cancleProductById(id);
-		
 
-	private static final org.jboss.logging.Logger logger  =LoggerFactory.logger(ProductController.class);
-	
-	@Autowired
-	private ProductService productService;
+	}
+
 	/* Author Madhurima */
 	@GetMapping("/getProduct")
 	public ResponseEntity<List<Product>> getProductList() {
-		List<Product> plist=productService.getProduct();
-		
+		List<Product> plist = productService.getProduct();
+
 		logger.info("In RestController >>getProductList");
-		
-		return ResponseEntity.ok().body(plist) ;
+
+		return ResponseEntity.ok().body(plist);
 	}
 
 	/* Author Vishal */
 	@PutMapping("/updateProduct")
 	public Product updateProduct(@RequestBody Product product) {
 		return productService.updateProduct(product);
-
 
 	}
 
