@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
+
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,7 @@ import com.velocity.service.ProductService;
 @Service
 public class ProductServiceImpl implements ProductService {
 
+	private static final org.jboss.logging.Logger logger  =LoggerFactory.logger(ProductServiceImpl.class);
 
 	//inject ProductRepository reference 
 	
@@ -51,8 +54,7 @@ public class ProductServiceImpl implements ProductService {
 		return productRepository.save(pro);
 	}
 
-	private static final org.jboss.logging.Logger logger  =LoggerFactory.logger(ProductServiceImpl.class);
-
+	
 	
 	
 	@SuppressWarnings("unchecked")
@@ -63,6 +65,18 @@ public class ProductServiceImpl implements ProductService {
 		return (List<Product>) product1;
 		
 
+	}
+
+	@Override
+	public Product saveProductCategory(Product product) {
+	return productRepository.save(product);
+		
+	}
+
+	@Override
+	public Optional<Product> getProductCategory(int id) {
+		Optional<Product> product1= productRepository.findById(id);
+		return product1;
 	}
 
 }
