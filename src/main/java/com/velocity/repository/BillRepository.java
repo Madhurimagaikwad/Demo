@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.velocity.model.Bill;
 
+
 @Repository
 public interface BillRepository extends JpaRepository<Bill, Integer>{
 

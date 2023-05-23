@@ -20,6 +20,33 @@ public class UserOrderController {
 	@Autowired
 	private OrderService orderService;
 
+	
+	
+	@PutMapping("/updateUserorder")
+	public ResponseEntity<User> updateUserOrder( @RequestBody User user  ) {
+		
+		User user2=userService.updateUser(user);
+		try {
+		List<Orders> order1=user.getOrderlist();
+		
+		for(Orders o:order1) {
+			o.setUserId(user.getId());
+			orderService.updateOrder(o);
+			
+		}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return ResponseEntity.ok().body(user2);
+		
+	}
+	
+	@DeleteMapping("/deleteOrder/{orderId}")
+	public void deleteById(@PathVariable("orderId") int orderId) {
+		orderService.deletById(orderId);
+	}
+
 	/* Author Vishal*/
 	@GetMapping("/getUserOrder")
 	public List<User> getUserOrder() {

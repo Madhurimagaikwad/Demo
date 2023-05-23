@@ -19,6 +19,15 @@ public class Product {
 	private int quantity;
 	private double price;
 	private int Productcode;
+	private String category;
+	
+	public String getCategory() {
+		return category;
+	}
+	
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
 	public int getId() {
 		return id;

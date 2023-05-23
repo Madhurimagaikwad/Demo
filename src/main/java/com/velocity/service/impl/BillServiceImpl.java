@@ -1,5 +1,8 @@
 package com.velocity.service.impl;
 
+
+import org.hibernate.annotations.common.util.impl.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,8 +13,20 @@ import com.velocity.service.BillService;
 @Service
 public class BillServiceImpl implements BillService {
 
+	private static final org.jboss.logging.Logger logger = LoggerFactory.logger(BillServiceImpl.class);
+
+
 	@Autowired
 	private BillRepository billRepository;
+
+
+	/* Author-Madhurima */
+	@Override
+	public Bill saveBill(Bill bill) {
+		Bill bill2 = billRepository.save(bill);
+		logger.info("In ServiceImpl >>saveBill");
+
+		return bill2;
 
 	/* Author Vishal */
 	@Override
@@ -26,6 +41,7 @@ public class BillServiceImpl implements BillService {
 		bill2.setPid(bill.getPid());
 		bill2.setProvider(bill.getProvider());
 		return billRepository.save(bill2);
+
 	}
 
 }

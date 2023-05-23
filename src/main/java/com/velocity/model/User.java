@@ -8,7 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "user")
@@ -24,12 +26,18 @@ public class User {
 	private Date birthday;
 	private String userType;
 
+	
+	 @OneToMany(mappedBy = "userId")
+		private List<Orders> orderlist;
+
+
 
 	@OneToMany(mappedBy = "orderId")
 	private List<Orders> orderList;
 	
 	@OneToMany(mappedBy="userId")
 	private List<UserAddress> userAddress;
+
 
 	public Integer getId() {
 		return id;
@@ -87,6 +95,24 @@ public class User {
 		this.userType = userType;
 	}
 
+	
+	public List<Orders> getOrderlist() {
+		return orderlist;
+	}
+	public void setOrderlist(List<Orders> orderlist) {
+		this.orderlist = orderlist;
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", realName=" + realName + ", password=" + password
+				+ ", gender=" + gender + ", birthday=" + birthday + ", userType=" + userType + "]";
+	}
+	
+	
+
+
+
+
 	public List<Orders> getOrderList() {
 		return orderList;
 	}
@@ -113,5 +139,6 @@ public class User {
 
 	
 	
+
 
 }

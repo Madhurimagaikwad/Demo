@@ -1,6 +1,9 @@
 
 package com.velocity.model;
 
+
+package com.velocity.model;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,6 +29,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="booking")
 public class Booking {
+
 
 
 	@Id
@@ -147,7 +151,8 @@ public class Booking {
 
 
 }
-=======
+
 }
+
 
 }
