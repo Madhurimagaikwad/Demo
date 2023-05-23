@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Table(name="booking")
 public class Booking {
 
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -119,4 +120,5 @@ public class Booking {
 	}
 
 	
+
 }

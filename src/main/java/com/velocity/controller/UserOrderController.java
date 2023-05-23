@@ -29,8 +29,8 @@ public class UserOrderController {
 		
 		User user2=userService.updateUser(user);
 		try {
-	
 		List<Orders> order1=user.getOrderlist();
+		
 		for(Orders o:order1) {
 			o.setUserId(user.getId());
 			orderService.updateOrder(o);

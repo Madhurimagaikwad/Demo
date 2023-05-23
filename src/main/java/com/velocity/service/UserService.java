@@ -10,6 +10,7 @@ public interface UserService {
 	public List<User> getUser();
 	public User saveUser(User user);
 
+
 	//66. Design Restful API to add the payment details for purchasing order from user.
 	
 		public User addPaymentDetailsForPurchaningOrder(User user);
@@ -24,3 +25,6 @@ public interface UserService {
 		
 		
 	}
+
+}
+

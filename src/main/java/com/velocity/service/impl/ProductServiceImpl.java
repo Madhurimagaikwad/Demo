@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
+
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,7 @@ import com.velocity.service.ProductService;
 @Service
 public class ProductServiceImpl implements ProductService {
 
+	private static final org.jboss.logging.Logger logger  =LoggerFactory.logger(ProductServiceImpl.class);
 
 	//inject ProductRepository reference 
 	
@@ -34,8 +37,7 @@ public class ProductServiceImpl implements ProductService {
 		productRepository.deleteById(id);
 
 
-	@Autowired
-	private ProductRepository productRepository;
+	}
 
 	@Override
 	public Product updateProduct(Product product) {
@@ -48,13 +50,12 @@ public class ProductServiceImpl implements ProductService {
 		pro.setPrice(product.getPrice());
 		pro.setProductcode(product.getProductcode());
 		pro.setQuantity(product.getQuantity());
+		pro.setCategory(product.getCategory());
 		return productRepository.save(pro);
+	}
 
-
-	private static final org.jboss.logging.Logger logger  =LoggerFactory.logger(ProductServiceImpl.class);
-
-	@Autowired
-	private ProductRepository productRepository;
+	
+	
 	
 	@SuppressWarnings("unchecked")
 	@Override
@@ -64,6 +65,18 @@ public class ProductServiceImpl implements ProductService {
 		return (List<Product>) product1;
 		
 
+	}
+
+	@Override
+	public Product saveProductCategory(Product product) {
+	return productRepository.save(product);
+		
+	}
+
+	@Override
+	public Optional<Product> getProductCategory(int id) {
+		Optional<Product> product1= productRepository.findById(id);
+		return product1;
 	}
 
 }

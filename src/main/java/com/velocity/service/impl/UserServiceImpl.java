@@ -42,6 +42,8 @@ public class UserServiceImpl implements UserService {
 		User users = userRepository.save(user);
 		return users;
 	}
+	
+	
 
 	/* Author - Anushka */
 
