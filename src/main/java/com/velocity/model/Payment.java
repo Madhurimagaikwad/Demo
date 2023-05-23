@@ -11,9 +11,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name="payment")
 public class Payment {
+
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 	private int id;
 	private String cardno;
 	private String nameoncard;
@@ -23,8 +29,14 @@ public class Payment {
 	private int cvv;
 	private int exmonth;
 	private int exyear;
+
 	
 	private int bookingId; // bookingId ifs Fk of Booking class 
+
+
+
+	private int fk_payment_id;
+	
 
 	public int getId() {
 		return id;
@@ -98,6 +110,7 @@ public class Payment {
 		this.exyear = exyear;
 	}
 
+
 	public int getBookingId() {
 		return bookingId;
 	}
@@ -105,6 +118,7 @@ public class Payment {
 	public void setBookingId(int bookingId) {
 		this.bookingId = bookingId;
 	}
+
 
 
 }

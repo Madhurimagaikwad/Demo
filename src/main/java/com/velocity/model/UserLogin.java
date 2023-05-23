@@ -16,14 +16,21 @@ import javax.persistence.Table;
 @Table(name="userlogin")
 public class UserLogin {
 
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 	private int id;
 	private String name;
 	private String gmail;
 	private String password;
 	private String pnumber;
 	
+
 	
 	//@JoinColumn(name = "fk_booking_id")
 	@OneToOne(targetEntity =Booking.class ,cascade = CascadeType.ALL)
@@ -34,6 +41,16 @@ public class UserLogin {
 		private List<Feedback> feedback;
 
 	
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_booking_id")
+	private Booking booking;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(referencedColumnName = "user_id")
+	private List<Feedback> feedback;
+
+
 	public int getId() {
 		return id;
 	}

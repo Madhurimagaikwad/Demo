@@ -1,4 +1,6 @@
+
 //Design the Restful web services for user to login system.
+
 
 package com.velocity.service.impl;
 
@@ -12,6 +14,7 @@ import com.velocity.service.UserLoginService;
 @Service
 public class UserLoginServiceImpl implements UserLoginService {
 
+
 	// inject UserLoginRepository
 	@Autowired
 	private UserLoginRepository userLoginRepository;
@@ -20,6 +23,15 @@ public class UserLoginServiceImpl implements UserLoginService {
 	public UserLogin getUserLoginByPassword(String password) {
 		UserLogin userLogin= userLoginRepository.getUserLoginByPassword(password);
 		return userLogin;
+
+	@Autowired
+	private UserLoginRepository userLoginRepository;
+
+	@Override
+	public UserLogin saveUserLogin(UserLogin userLogin) {
+		UserLogin userl = userLoginRepository.save(userLogin);
+		return userl;
+
 	}
 
 }
