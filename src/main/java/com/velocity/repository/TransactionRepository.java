@@ -3,10 +3,9 @@ package com.velocity.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.velocity.model.Bill;
-
+import com.velocity.model.Transaction;
 
 @Repository
-public interface BillRepository extends JpaRepository<Bill, Integer>{
+public interface TransactionRepository extends JpaRepository<Transaction, Integer> {
 
 }
