@@ -5,18 +5,19 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.velocity.model.Product;
-import com.velocity.service.ProductService;
+import com.velocity.model.Bill;
+import com.velocity.service.BillService;
 
 @RestController
-public class ProductController {
+public class BillController {
 
 	@Autowired
-	private ProductService productService;
+	private BillService billService;
 
-	@PutMapping("/updateProduct")
-	public Product updateProduct(@RequestBody Product product) {
-		return productService.updateProduct(product);
+	/* Author Vishal */
+	@PutMapping("/updateBills")
+	public Bill updateBill(@RequestBody Bill bill) {
+		return billService.updateBill(bill);
 
 	}
 

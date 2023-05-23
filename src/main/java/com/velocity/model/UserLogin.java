@@ -12,9 +12,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+
 package com.velocity.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import javax.persistence.Table;
 
@@ -22,14 +33,30 @@ import javax.persistence.Table;
 @Table(name="userlogin")
 public class UserLogin {
 
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 	private int id;
 	private String name;
 	private String gmail;
 	private String password;
 	private String pnumber;
+	
+
+	
+	//@JoinColumn(name = "fk_booking_id")
+	@OneToOne(targetEntity =Booking.class ,cascade = CascadeType.ALL)
+	private Booking booking;
+	
+	//@JoinColumn(referencedColumnName = "user_id")
+		@OneToMany(mappedBy = "userid")
+		private List<Feedback> feedback;
+
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_booking_id")
@@ -38,6 +65,7 @@ public class UserLogin {
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "user_id")
 	private List<Feedback> feedback;
+
 
 	public int getId() {
 		return id;
@@ -95,8 +123,10 @@ public class UserLogin {
 		this.feedback = feedback;
 	}
 
-
 	
 }
 
 }
+
+}
+

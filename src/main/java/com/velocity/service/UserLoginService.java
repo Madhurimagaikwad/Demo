@@ -5,6 +5,9 @@ import com.velocity.model.UserLogin;
 
 public interface UserLoginService {
 	
+
+	public UserLogin getUserLoginByPassword(String password);
+
 	public UserLogin saveUserLogin(UserLogin userLogin);
 
 public interface UserLoginService {

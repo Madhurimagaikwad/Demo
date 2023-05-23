@@ -9,9 +9,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+
 package com.velocity.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import javax.persistence.Table;
 
@@ -21,7 +29,12 @@ public class Booking {
 
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
+	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 	private int id;
 	private String bikename;
 	private String bikenum;
@@ -31,12 +44,17 @@ public class Booking {
 	private String phone;
 	private String gender;
 	private int advanceamount;
+
+	private int userid;	// userid is FK of UserLogin class
 	
-	
+	//@JoinColumn(name = "fk_payment_id")
+	@OneToOne(targetEntity =Payment.class ,cascade = CascadeType.ALL)
+
 	//private int booking_id;
 	
 	//@OneToOne(mappedBy="fk_payment_id")
 	//@JoinColumn(name = "fk_payment_id")
+
 	private Payment payment;
 
 	public int getId() {
@@ -111,6 +129,14 @@ public class Booking {
 		this.advanceamount = advanceamount;
 	}
 
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+
 	public Payment getPayment() {
 		return payment;
 	}
@@ -119,7 +145,9 @@ public class Booking {
 		this.payment = payment;
 	}
 
+
+}
+=======
 }
 
 }
-
