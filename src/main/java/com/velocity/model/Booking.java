@@ -1,3 +1,4 @@
+
 package com.velocity.model;
 
 import javax.persistence.CascadeType;
@@ -7,11 +8,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
+package com.velocity.model;
+
+import javax.persistence.Entity;
+
 import javax.persistence.Table;
 
 @Entity
 @Table(name="booking")
 public class Booking {
+
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -113,3 +120,6 @@ public class Booking {
 	}
 
 }
+
+}
+
