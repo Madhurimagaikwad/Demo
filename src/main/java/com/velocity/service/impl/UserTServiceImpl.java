@@ -4,6 +4,7 @@ import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.velocity.model.UserT;
 import com.velocity.repository.UserTRepository;
 import com.velocity.service.UserTService;
 
@@ -20,6 +21,15 @@ public class UserTServiceImpl implements UserTService{
 		userTRepository.deleteById(id);
 		logger.info("In Implementation >>deleteById()");
 
+	}
+	
+	
+	//Design the Restful web service which can store user with only one transaction into database
+	
+	@Override
+	public UserT saveUserTransactionDetails(UserT userT) {
+		 UserT userT2= userTRepository.save(userT);
+		return userT2;
 	}
 
 }

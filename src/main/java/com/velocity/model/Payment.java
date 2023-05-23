@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="payment")
 public class Payment {
+
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -105,6 +106,4 @@ public class Payment {
 	public void setBookingId(int bookingId) {
 		this.bookingId = bookingId;
 	}
-
-
 }

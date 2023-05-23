@@ -4,22 +4,22 @@ package com.velocity.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.slf4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.velocity.model.Product;
 import com.velocity.service.ProductService;
 
-import com.velocity.service.ProductService;
+
 
 @RestController
 public class ProductController {
@@ -35,11 +35,10 @@ public class ProductController {
 	{
 		productService.cancleProductById(id);
 		
-
+	}
 	private static final org.jboss.logging.Logger logger  =LoggerFactory.logger(ProductController.class);
 	
-	@Autowired
-	private ProductService productService;
+	
 	/* Author Madhurima */
 	@GetMapping("/getProduct")
 	public ResponseEntity<List<Product>> getProductList() {
@@ -56,6 +55,15 @@ public class ProductController {
 		return productService.updateProduct(product);
 
 
+	}
+	
+	/* Author Anushka */
+	@PostMapping("/saveProductdetails")
+	public Product saveProductdetails(@RequestBody Product product)
+	{
+		Product product2 = productService.saveProductdetails(product);
+		return product2;
+		
 	}
 
 }

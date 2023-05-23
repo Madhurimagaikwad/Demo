@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.velocity.model.Product;
 import com.velocity.model.Provider;
 import com.velocity.repository.ProviderRepository;
 import com.velocity.service.ProviderService;
@@ -29,6 +30,20 @@ public class ProviderServiceImpl implements ProviderService {
 
 		providerRepository.deleteById(pid);
 
+	}
+	@Override
+	public Provider updateProvider(Provider provider) {
+		int id = provider.getPid();
+	Provider provider2	= providerRepository.findById(id).get();
+		provider2.setAddress(provider.getAddress());
+		provider2.setCreateDate(provider.getCreateDate());
+		provider2.setDescribe(provider.getDescribe());
+		provider2.setFax(provider.getFax());
+		provider2.setPeople(provider.getPeople());
+		provider2.setPhone(provider.getPhone());
+		provider2.setProviderCode(provider.getProviderCode());
+		provider2.setProviderName(provider.getProviderName());
+		return null;
 	}
 
 

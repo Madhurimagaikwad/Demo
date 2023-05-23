@@ -14,28 +14,26 @@ import com.velocity.service.UserService;
 
 @RestController
 public class UserAddressController {
-	
-	//inject UserService and UserAddressService 
+
+	// inject UserService and UserAddressService
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private UserAddressService userAddressService;
-	
+
 	@PostMapping("/saveUserAddress")
-	public User saveUserAddress(@RequestBody User user)
-	{
+	public User saveUserAddress(@RequestBody User user) {
 		User user2 = userService.saveUser(user);
-		
-		List<UserAddress> userAddress= user.getUserAddressList();
-		
-		for(UserAddress useradd : userAddress)
-		{
+
+		List<UserAddress> userAddress = user.getUserAddressList();
+
+		for (UserAddress useradd : userAddress) {
 			useradd.setUserId(user.getId());
 			userAddressService.saveUserAddress(useradd);
 		}
 		return user2;
-		
+
 	}
 
 }

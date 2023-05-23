@@ -1,9 +1,11 @@
 package com.velocity.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,7 +19,8 @@ public class Orders {
     private int quantity;
     private double price;
     
-   
+    @OneToOne(targetEntity = Payment.class, cascade =CascadeType.ALL )
+   private Booking booking;
     
     
 	public Integer getOrderId() {
@@ -49,6 +52,14 @@ public class Orders {
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	
+	public Booking getBooking() {
+		return booking;
+	}
+	
+	public void setBooking(Booking booking) {
+		this.booking = booking;
 	}
 	
 	@Override

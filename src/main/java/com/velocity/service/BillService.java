@@ -1,5 +1,11 @@
 package com.velocity.service;
 
-public interface BillService {
+import java.util.List;
 
+import com.velocity.model.Bill;
+
+public interface BillService {
+	
+	//Design the Restful API to get the bill details
+	public List<Bill> getBillDetails();
 }

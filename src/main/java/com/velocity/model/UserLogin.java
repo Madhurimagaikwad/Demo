@@ -16,6 +16,7 @@ import javax.persistence.Table;
 @Table(name="userlogin")
 public class UserLogin {
 
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -90,5 +91,6 @@ public class UserLogin {
 		this.feedback = feedback;
 	}
 
+	
 	
 }

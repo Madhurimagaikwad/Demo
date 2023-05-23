@@ -20,7 +20,7 @@ public class Bill {
 	private String billCom;
 	private Integer billNum;
 	private Double money;
-	private Integer pid;
+	//private Integer pid;
 
 	@OneToOne(targetEntity = Provider.class, cascade = CascadeType.ALL)
 	private Provider provider;
@@ -72,6 +72,7 @@ public class Bill {
 	public void setMoney(Double money) {
 		this.money = money;
 	}
+	/*
 
 	public Integer getPid() {
 		return pid;
@@ -80,7 +81,7 @@ public class Bill {
 	public void setPid(Integer pid) {
 		this.pid = pid;
 	}
-
+*/
 	public Provider getProvider() {
 		return provider;
 	}

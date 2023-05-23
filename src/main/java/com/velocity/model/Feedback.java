@@ -1,25 +1,34 @@
 package com.velocity.model;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="feedback")
 public class Feedback {
 
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private int ratings;
 	private String reviews;
 	private String bikeNum;
 	private String bikeName;
-
-	private int userid;	// userid is FK of UserLogin class
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	private UserLogin userLogin;
 
 	public int getId() {
 		return id;
@@ -69,13 +78,5 @@ public class Feedback {
 		this.bikeName = bikeName;
 	}
 
-	public int getUserid() {
-		return userid;
-	}
-
-	public void setUserid(int userid) {
-		this.userid = userid;
-	}
-	
-	
 }
+

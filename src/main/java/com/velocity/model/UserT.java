@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,6 +28,10 @@ public class UserT {
 	@OneToMany(mappedBy = "userId")
 	private List<Transaction> transactions;
 
+	//Design the Restful web service which can store user with only one transaction into database
+	
+	@OneToOne(targetEntity = UserTransaction.class)
+	private UserTransaction userTransaction;
 	public Integer getId() {
 		return id;
 	}

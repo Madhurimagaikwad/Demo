@@ -12,7 +12,7 @@ import com.velocity.service.FeedbackService;
 @RestController
 public class FeedbackController {
 	
-	//inject service 
+	//inject feedbackService 
 	@Autowired
 	private FeedbackService feedbackService;
 	

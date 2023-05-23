@@ -17,7 +17,7 @@ import com.velocity.service.UserService;
 @RestController
 public class PaymentPurchaningOrderController {
 	
-	// inject userservice
+	// inject user service
 	
 	@Autowired
 	private UserService userService;

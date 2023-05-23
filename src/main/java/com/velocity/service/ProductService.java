@@ -11,5 +11,9 @@ public interface ProductService {
 	public Product updateProduct(Product product);
 
 	public List<Product> getProduct();
+	
+	//Design the API to add the product details into database.
+	
+	public Product saveProductdetails(Product product);
 
 }

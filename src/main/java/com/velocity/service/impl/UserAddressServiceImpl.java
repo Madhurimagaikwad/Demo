@@ -8,21 +8,18 @@ import com.velocity.repository.UserAddressRepository;
 import com.velocity.service.UserAddressService;
 
 @Service
-public class UserAddressServiceImpl implements UserAddressService{
+public class UserAddressServiceImpl implements UserAddressService {
 
-	
-	//inject UserAddressRepository reference
-	
+	// inject UserAddressRepository reference
+
 	@Autowired
 	private UserAddressRepository userAddressRepository;
-	
+
 	@Override
 	public UserAddress saveUserAddress(UserAddress userAddress) {
-		UserAddress userAddress2= userAddressRepository.save(userAddress);
-		
+		UserAddress userAddress2 = userAddressRepository.save(userAddress);
+
 		return userAddress2;
 	}
-	
-	
 
 }

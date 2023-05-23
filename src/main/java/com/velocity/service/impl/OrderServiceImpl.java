@@ -16,19 +16,19 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public Orders updateOrder(Orders order) {
-		Integer oid=order.getOrderId();
-		Orders order1=orderRepository.findById(oid).get();
+		Integer oid = order.getOrderId();
+		Orders order1 = orderRepository.findById(oid).get();
 		order1.setProductName(order.getProductName());
 		order1.setPrice(order.getPrice());
 		order1.setQuantity(order.getQuantity());
-		order1.setUserId(order.getUserId()); 
-	   return orderRepository.save(order1);
+		order1.setUserId(order.getUserId());
+		return orderRepository.save(order1);
 	}
 
 	@Override
 	public void deletById(int orderId) {
 		orderRepository.deleteById(orderId);
-		
+
 	}
 
 	@Override
@@ -36,12 +36,11 @@ public class OrderServiceImpl implements OrderService {
 		List<Orders> list = (List<Orders>) orderRepository.findAll();
 		return list;
 	}
-	
+
 	@Override
 	public Orders saveOrders(Orders orders) {
 		Orders orders2 = orderRepository.save(orders);
 		return orders2;
 	}
-	
 
 }
