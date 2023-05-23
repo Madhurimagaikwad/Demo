@@ -28,7 +28,7 @@ public class ProductController {
 
 	private static final org.jboss.logging.Logger logger = LoggerFactory.logger(ProductController.class);
 
-	// inject ProductService reference
+	//inject ProductService reference
 
 	@Autowired
 	private ProductService productService;

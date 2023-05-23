@@ -9,7 +9,6 @@ import com.velocity.service.CategorySevice;
 
 @RestController
 public class CategoryController {
-	
 	@Autowired
 	private CategorySevice categorySevice;
 	

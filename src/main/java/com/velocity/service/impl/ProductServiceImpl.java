@@ -26,7 +26,7 @@ public class ProductServiceImpl implements ProductService {
 
 	private static final org.jboss.logging.Logger logger  =LoggerFactory.logger(ProductServiceImpl.class);
 
-	//inject ProductRepository reference 
+	//inject ProductRepository reference
 	
 	@Autowired
 	private ProductRepository productRepository;
