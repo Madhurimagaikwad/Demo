@@ -17,6 +17,7 @@ public class UserLoginServiceImpl implements UserLoginService {
 	@Autowired
 	private UserLoginRepository userLoginRepository;
 
+
 	@Override
 	public UserLogin saveUserLogin(UserLogin userLogin) {
 		UserLogin userl = userLoginRepository.save(userLogin);
@@ -28,6 +29,14 @@ public class UserLoginServiceImpl implements UserLoginService {
 	public UserLogin getUserLoginByPassword(String password) {
 		// TODO Auto-generated method stub
 		return null;
+
+	@Override
+	public UserLogin saveUserLogin(UserLogin userLogin) {
+		UserLogin userl = userLoginRepository.save(userLogin);
+		return userl;
+
 	}
 
 }
+
+

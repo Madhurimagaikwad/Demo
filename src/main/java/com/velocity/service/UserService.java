@@ -6,6 +6,7 @@ import com.velocity.model.User;
 
 public interface UserService {
 
+
 	public User updateUser(User user);
 
 	public List<User> getUser();
@@ -26,5 +27,12 @@ public interface UserService {
 	// user.
 
 	public void deletePaymentDetailsForPurchasingOrder(int id);
+
+
+	
+	public List<User> getUser();
+	
+	public User saveUser(User user);
+	
 
 }

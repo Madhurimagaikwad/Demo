@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="bill")
+@Table(name = "bill")
 public class Bill {
 
 	@Id
@@ -74,6 +74,7 @@ public class Bill {
 	}
 	/*
 
+
 	public Integer getPid() {
 		return pid;
 	}
@@ -82,6 +83,9 @@ public class Bill {
 		this.pid = pid;
 	}
 */
+
+	
+
 	public Provider getProvider() {
 		return provider;
 	}
@@ -89,8 +93,13 @@ public class Bill {
 	public void setProvider(Provider provider) {
 		this.provider = provider;
 	}
-	
-	
+
+	public Integer getPid() {
+		return pid;
+	}
+	public void setPid(Integer pid) {
+		this.pid = pid;
+	}
 	
 	
 

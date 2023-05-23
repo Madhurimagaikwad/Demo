@@ -1,5 +1,7 @@
 package com.velocity.service.impl;
 
+import java.util.List;
+
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +24,7 @@ public class UserTServiceImpl implements UserTService{
 		logger.info("In Implementation >>deleteById()");
 
 	}
-	
+
 	
 	//Design the Restful web service which can store user with only one transaction into database
 	
@@ -30,6 +32,16 @@ public class UserTServiceImpl implements UserTService{
 	public UserT saveUserTransactionDetails(UserT userT) {
 		 UserT userT2= userTRepository.save(userT);
 		return userT2;
+
+	@Override
+	public void deleteUserById(int id) {
+		userTRepository.deleteById(id);
+	}
+	@Override
+	public List<UserT> getUser() {
+		List<UserT> userT=(List<UserT>) userTRepository.findAll();
+		return userT;
+
 	}
 
 }

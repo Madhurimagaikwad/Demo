@@ -16,6 +16,7 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 
 	@Override
+
 	public User updateUser(User user) {
 		Integer id = user.getId();
 		User user2 = userRepository.findById(id).get();
@@ -31,8 +32,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+
 	public List<User> getUser() {
-		List<User> list = (List<User>) userRepository.findAll();
+		List<User> list = userRepository.findAll();
 		return list;
 	}
 
@@ -67,5 +69,11 @@ public class UserServiceImpl implements UserService {
 		userRepository.deleteById(id);
 
 	}
+
+		User users = userRepository.save(user);
+		return users;
+	}
+	
+
 
 }

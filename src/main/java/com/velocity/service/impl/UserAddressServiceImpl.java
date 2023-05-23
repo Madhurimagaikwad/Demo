@@ -1,5 +1,9 @@
 package com.velocity.service.impl;
 
+
+import java.util.List;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +25,14 @@ public class UserAddressServiceImpl implements UserAddressService {
 
 		return userAddress2;
 	}
+
+
+	/*Author Vishal */
+	@Override
+	public List<UserAddress> getUserAddress() {
+		List<UserAddress> useradd=userAddressRepository.findAll();
+		return useradd;
+	}
+
 
 }
