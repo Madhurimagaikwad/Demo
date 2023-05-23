@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="bill")
+@Table(name = "bill")
 public class Bill {
 
 	@Id
@@ -88,9 +88,5 @@ public class Bill {
 	public void setProvider(Provider provider) {
 		this.provider = provider;
 	}
-	
-	
-	
-	
 
 }

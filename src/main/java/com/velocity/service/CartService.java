@@ -6,7 +6,8 @@ import com.velocity.model.Cart;
 
 public interface CartService {
 	
-	
+	public Cart saveCart(Cart cart);
 	public List<Cart> getCartDetails();
+	
 
 }
