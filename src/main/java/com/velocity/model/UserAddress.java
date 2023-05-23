@@ -4,7 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 
 @Entity
@@ -19,7 +21,7 @@ public class UserAddress {
     private String consignee; 
     private String phoneNum;
     private String isDefault;
- 
+
     
 	public Integer getId() {
 		return id;
@@ -57,6 +59,7 @@ public class UserAddress {
 	public void setIsDefault(String isDefault) {
 		this.isDefault = isDefault;
 	}
+
 	@Override
 	public String toString() {
 		return "UserAddress [id=" + id + ", userAddress=" + userAddress + ", userId=" + userId + ", consignee="

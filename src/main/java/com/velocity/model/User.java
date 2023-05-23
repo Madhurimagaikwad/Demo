@@ -24,6 +24,7 @@ public class User {
 	private Date birthday;
 	private String userType;
 
+
 	@OneToMany(mappedBy = "orderId")
 	private List<Orders> orderList;
 	
@@ -108,5 +109,9 @@ public class User {
 		return "User [id=" + id + ", username=" + username + ", realName=" + realName + ", password=" + password
 				+ ", gender=" + gender + ", birthday=" + birthday + ", userType=" + userType + "]";
 	}
+
+
+	
+	
 
 }
