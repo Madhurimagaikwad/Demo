@@ -17,7 +17,8 @@ public class Orders {
     private int quantity;
     private double price;
     
-   
+    @OneToOne(targetEntity = Payment.class, cascade =CascadeType.ALL )
+   private Booking booking;
     
     
 	public Integer getOrderId() {
