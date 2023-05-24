@@ -16,5 +16,9 @@ public class RewardSettingEntityImpl implements RewardSettingEntityService {
 		
 		rewardSettingEntityRepository.deleteById(id);
 	}
-
+	
+	public RewardSettingEntity saveRewardSettingEntity(RewardSettingEntity rewardSettingEntity)
+  
+	RewardSettingEntity rewardSettingEntity1=rewardSettingEntityRepository.save(rewardSettingEntity);
+    return rewardSettingEntity1;
 }

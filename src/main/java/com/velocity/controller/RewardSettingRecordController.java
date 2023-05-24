@@ -17,5 +17,14 @@ public class RewardSettingRecordController {
 	public void deletById(@PathVariable("id") int id) {
 		rewardSettingEntityService.deletById(id);
 	}
-
+	
+	public ResponseEntity<RewardSettingEntity> saveRewardSettingEntity(@RequestBody RewardSettingEntity rewardSettingEntity ) {
+		RewardSettingEntity rewardSettingEntity1=rewardSettingEntityService.saveRewardSettingEntity(rewardSettingEntity);
+		return ResponseEntity.ok().body(rewardSettingEntity1);
+	}
 }
+/* Author Vishal*/
+@PostMapping("/saveProvider")
+public ResponseEntity<Provider> saveProviderDetails(@RequestBody Provider provider) {
+	Provider providers = providerService.saveProvider(provider);
+	return ResponseEntity.ok().body(providers);
